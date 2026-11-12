@@ -92,7 +92,8 @@
             this.pnlCont.Name = "pnlCont";
             this.pnlCont.Size = new System.Drawing.Size(805, 361);
             this.pnlCont.TabIndex = 1;
-            // 
+            // asdsad
+            /*dasdsa*/
             // frmInventory
             // 
             this.ClientSize = new System.Drawing.Size(829, 385);

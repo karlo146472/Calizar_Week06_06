@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.gbItemDescription = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lbxItems = new System.Windows.Forms.ListBox();
-            this.lblPrompt = new System.Windows.Forms.Label();
+            this.lbxPrompt = new System.Windows.Forms.Label();
             this.gbItemDescription.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,27 +51,27 @@
             this.gbItemDescription.Controls.Add(this.txtDescription);
             this.gbItemDescription.Location = new System.Drawing.Point(68, 31);
             this.gbItemDescription.Name = "gbItemDescription";
-            this.gbItemDescription.Size = new System.Drawing.Size(506, 135);
+            this.gbItemDescription.Size = new System.Drawing.Size(506, 118);
             this.gbItemDescription.TabIndex = 0;
             this.gbItemDescription.TabStop = false;
             this.gbItemDescription.Text = "ItemDescription";
             this.gbItemDescription.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtDescription
+            // cmbUnit
             // 
-            this.txtDescription.Location = new System.Drawing.Point(178, 35);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(305, 20);
-            this.txtDescription.TabIndex = 0;
+            this.cmbUnit.FormattingEnabled = true;
+            this.cmbUnit.Location = new System.Drawing.Point(362, 71);
+            this.cmbUnit.Name = "cmbUnit";
+            this.cmbUnit.Size = new System.Drawing.Size(121, 21);
+            this.cmbUnit.TabIndex = 4;
+            this.cmbUnit.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label1
+            // txtAmount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Description";
+            this.txtAmount.Location = new System.Drawing.Point(178, 72);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(166, 20);
+            this.txtAmount.TabIndex = 3;
             // 
             // label2
             // 
@@ -82,21 +82,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Amount";
             // 
-            // txtAmount
+            // label1
             // 
-            this.txtAmount.Location = new System.Drawing.Point(178, 72);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(166, 20);
-            this.txtAmount.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Description";
             // 
-            // cmbUnit
+            // txtDescription
             // 
-            this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(362, 71);
-            this.cmbUnit.Name = "cmbUnit";
-            this.cmbUnit.Size = new System.Drawing.Size(121, 21);
-            this.cmbUnit.TabIndex = 4;
-            this.cmbUnit.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.txtDescription.Location = new System.Drawing.Point(178, 35);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(305, 20);
+            this.txtDescription.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -116,33 +116,35 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lbxItems
             // 
             this.lbxItems.FormattingEnabled = true;
-            this.lbxItems.Location = new System.Drawing.Point(68, 183);
+            this.lbxItems.Location = new System.Drawing.Point(68, 155);
             this.lbxItems.Name = "lbxItems";
-            this.lbxItems.Size = new System.Drawing.Size(636, 160);
+            this.lbxItems.Size = new System.Drawing.Size(636, 121);
             this.lbxItems.TabIndex = 7;
             this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // lblPrompt
+            // lbxPrompt
             // 
-            this.lblPrompt.BackColor = System.Drawing.Color.Brown;
-            this.lblPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPrompt.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPrompt.Location = new System.Drawing.Point(68, 370);
-            this.lblPrompt.Name = "lblPrompt";
-            this.lblPrompt.Size = new System.Drawing.Size(636, 27);
-            this.lblPrompt.TabIndex = 8;
-            this.lblPrompt.Text = "Prompt";
-            this.lblPrompt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbxPrompt.BackColor = System.Drawing.Color.Brown;
+            this.lbxPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbxPrompt.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbxPrompt.Location = new System.Drawing.Point(68, 304);
+            this.lbxPrompt.Name = "lbxPrompt";
+            this.lbxPrompt.Size = new System.Drawing.Size(636, 27);
+            this.lbxPrompt.TabIndex = 8;
+            this.lbxPrompt.Text = "Prompt";
+            this.lbxPrompt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbxPrompt.Visible = false;
             // 
             // ucProductListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblPrompt);
+            this.Controls.Add(this.lbxPrompt);
             this.Controls.Add(this.lbxItems);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
@@ -168,6 +170,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ListBox lbxItems;
-        private System.Windows.Forms.Label lblPrompt;
+        private System.Windows.Forms.Label lbxPrompt;
     }
 }

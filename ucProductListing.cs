@@ -34,7 +34,8 @@ namespace Calizar_Week06_05
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            lbxPrompt.Text = "";
+            lbxPrompt.Visible = false;
         }
 
         private void ucProductListing_Load(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace Calizar_Week06_05
         {
             lbxItems.DataSource = null;
             lbxItems.DataSource = shopingList;
-        
+         
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -72,6 +73,35 @@ namespace Calizar_Week06_05
                 txtDescription.Focus();
             }
         
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            int index = lbxItems.SelectedIndex;
+
+            if (index != -1)
+            {
+
+                DialogResult deleteMessage = MessageBox.Show("Are you sure want t delete?",
+                                "Delete Confirmation", MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question);
+
+                MessageBox.Show(shopingList[index] + " deleted.");
+
+                shopingList.RemoveAt(index);
+                updateGUI();
+
+
+            }
+            else {
+
+                lbxPrompt.Text = "Please select an item to delete.";
+                lbxPrompt.Visible = true;
+            
+            }
+            
+
         }
     }
 }
